@@ -1,2 +1,19 @@
-let message1 = 'TypeScriptの練習';
-document.getElementById('message').innerHTML = message1;
+class Student {
+  fullName: String;
+  constructor(public firstName: string, public middleName: string, public lastName: string) {
+    this.fullName = firstName + " " + middleName + " " + lastName;
+  }
+}
+
+interface Person {
+  firstName: string;
+  lastName: string;
+}
+
+function greeter(person: Person) {
+  return "Hello, " + person.firstName + " " + person.middleName + " " + person.lastName;
+}
+
+let user = new Student("Jane", "M", "User");
+
+document.body.textContent = greeter(user);
